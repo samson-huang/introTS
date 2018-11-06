@@ -24,7 +24,7 @@ library(fBasics) # Load package
 da=read.table('d-ibm-0110.txt',header=T) # Load text data with names.
 head(da) # See the first 6 rows
 dim(da)  # Dimension of the data object "da".
-da <- read.csv("d-vix0411.csv",header=T) # Load csv data with names.
+da <- read.csv("d-vix0411.txt",header=T) # Load csv data with names.
 #
 library(quantmod)
 getSymbols("AAPL",from="2007-01-03",to="2011-12-02") #Specify period
@@ -74,7 +74,7 @@ getSymbols("AAPL",from="2011-01-03",to="2011-06-30")
 X=AAPL[,1:4] # Locate open, high, low, and close prices
 xx=cbind(as.numeric(X[,1]),as.numeric(X[,2]),as.numeric(X[,3]),as.numeric(X[,4]))
 source("ohlc.R") # Compile the R script
-ohlc(xx,xl="days",yl="price",title="Apple Stock")
+ohlc_plot(xx,xl="days",yl="price",title="Apple Stock")
 source("ma.R")  # Compile R script
 getSymbols("AAPL",from="2010-01-02",to="2011-12-08")
 x1=as.numeric(AAPL$AAPL.Close) # Locate close price
