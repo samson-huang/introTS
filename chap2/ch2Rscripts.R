@@ -1,5 +1,7 @@
 ### Chapetr 2 ####
 ### correlations
+#window setwd("D:/quant/introTS/chap2/")
+#linux setwd("~/GitDoc/introTS/chap2/")
 da=read.table("m-ibmsp6709.txt",header=T)
 head(da)
 ibm=da$ibm
