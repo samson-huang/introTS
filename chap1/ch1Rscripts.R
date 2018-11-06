@@ -1,5 +1,6 @@
 ### Chapter 1 ###
-#setwd("D:/quant/introTS/chap1/")
+#window setwd("D:/quant/introTS/chap1/")
+#linux setwd("~/GitDoc/introTS/chap1/")
 library(quantmod)   # Load the package
 getSymbols("AAPL")  # Download daily prices of Apple stock from Yahoo
 dim(AAPL)  # (dimension): See the size of the downloaded data.
