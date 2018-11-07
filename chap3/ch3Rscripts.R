@@ -1,5 +1,7 @@
 ### Chapter 3 ####
 ### Petro Price
+#linux setwd("~/GitDoc/introTS/chap3/")
+library(quantmod)
 da=read.table("w-petroprice.txt",header=T)
 da1=read.table("w-gasoline.txt")
 pgs=log(da1[,1])
@@ -11,6 +13,7 @@ title(main='(a) Gasoline')
 plot(tdx,pus,xlab='year',ylab='ln(price)',type='l')
 title(main='(b) Crude oil')
 dpgs=diff(pgs)
+plot(dpgs,type='l')
 acf(dpgs,lag=20)
 pacf(dpgs,lag=20)
 m1=ar(diff(pgs),method='mle')
