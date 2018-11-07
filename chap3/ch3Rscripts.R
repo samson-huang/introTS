@@ -25,6 +25,7 @@ m1=arima(dpgs,order=c(5,0,0),include.mean=F,fixed=c(NA,NA,NA,0,NA))
 m1
 tsdiag(m1,gof=20)
 dpus=diff(pus)
+plot(pus)
 m3=lm(dpgs~-1+dpus)
 summary(m3)
 acf(m3$residuals,lag=20)
@@ -88,7 +89,7 @@ m2=arima(Gt,order=c(2,0,1),seasonal=list(order=c(0,0,1),period=24),xreg=time)
 m2
 tsdiag(m2,gof=36) # model checking
 ### Comparison 
-source("backtest.R")
+source("../chap2/backtest.R")
 pm1=backtest(m1,Gt,1368,1)
 time=as.matrix(time)
 pm2=backtest(m2,Gt,1368,1,xre=time)
